@@ -9,7 +9,8 @@ interface NavBarProps {
 }
 
 function NavBar({ setPokemonName, pokemonList }: NavBarProps) {
-  return (
+
+   return (
     <nav>
       {pokemonList.map((onePokemonFromTheList) => (
         <button

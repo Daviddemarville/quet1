@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 
 import NavBar from "./components/NavBar";
@@ -30,10 +30,23 @@ const pokemonList = [
   },
 ];
 
+
+
 function App() {
   const [pokemonName, setPokemonName] = useState("bulbasaur");
 
   const pokemon = pokemonList.find((pokemon) => pokemon.name === pokemonName);
+
+  useEffect(() => {
+    alert("Hello Pokémon trainer :)");
+  }, []
+);
+
+useEffect(() => {
+  if (pokemonName.toLowerCase() === "pikachu") {
+    alert("pika pikachu !!!");
+  }
+}, [pokemonName]);
 
   if (pokemon == null) {
     throw new Error("Invalid pokemon name");
